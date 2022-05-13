@@ -158,4 +158,48 @@
 		background: var(--color-primary);
 		cursor: not-allowed;
 	}
+	@media only screen and (max-width: 30em) {
+		.cards {
+			flex-wrap: wrap;
+		}
+		h1 {
+			font-size: 2rem;
+			margin: 2rem 0;
+			font-weight: 700;
+			width: 100%;
+		}
+		h2 {
+			margin-top: 2rem;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--color-secondary);
+		}
+		h3 {
+			font-size: 1.25rem;
+			width: 100%;
+			font-weight: 400;
+		}
+		main {
+			width: 100%;
+		}
+		.info {
+			width: 100%;
+		}
+		.cards {
+			margin: 2rem 0 0 -1.25rem;
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+		}
+		:root {
+			padding: 5%;
+		}
+		.button {
+			padding: 1rem;
+			margin: 1rem 0 0 -1rem;
+			width: 100%;
+			border-radius: 0.5rem;
+			font-size: 1.25rem;
+		}
+	}
 </style>

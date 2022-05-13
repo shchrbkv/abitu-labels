@@ -121,4 +121,15 @@
 		height: 4rem;
 		padding-bottom: 1rem;
 	}
+	@media only screen and (max-width: 30em) {
+		.card {
+			width: 100%;
+			margin: 0 0 1rem 0;
+			flex: 0 0 100%;
+		}
+		.full {
+			padding-bottom: 0.5rem;
+			height: 100%;
+		}
+	}
 </style>
