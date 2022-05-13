@@ -34,6 +34,14 @@
 		{/if}
 	</div>
 	<div class="half">
+		<h4>{app.score.total}</h4>
+		<p>мой балл</p>
+	</div>
+	<div class="half">
+		<h4>{app.program.stats.bounds.total.iqr[0]}&ndash;{app.program.stats.bounds.total.iqr[1]}</h4>
+		<p>средний</p>
+	</div>
+	<div class="half">
 		<h4>{app.stats.position.absolute}<span>/{app.program.stats.applications.total}</span></h4>
 		<p>позиция</p>
 	</div>
@@ -45,14 +53,6 @@
 			<h4 style="color:#35C41C">{app.stats.distance} &darr</h4>
 			<p>до черты</p>
 		{/if}
-	</div>
-	<div class="half">
-		<h4>{app.score.total}</h4>
-		<p>мой балл</p>
-	</div>
-	<div class="half">
-		<h4>{app.program.stats.bounds.total.iqr[0]}&ndash;{app.program.stats.bounds.total.iqr[1]}</h4>
-		<p>средний</p>
 	</div>
 	<div class="full">
 		<p>{app.program.title}</p>

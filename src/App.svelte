@@ -90,7 +90,7 @@
 				Сохранить и продолжить &#8594;
 			</div>
 		{:catch}
-			<div class="button inactive">Ошибка загрузки данных, обновите страницу</div>
+			<div class="button inactive">Данные недоступны. Тут понадобится VPN...</div>
 		{/await}
 	{/if}
 </main>
