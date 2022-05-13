@@ -11,13 +11,13 @@
 	let abit;
 	let applications = [];
 
-	let priority;
-	$: if (priority > applications.length) {
-		priority = applications.length;
-	}
-	$: if (priority < 1) {
-		priority = 1;
-	}
+	let priority = [1, 2, 3, 4, 5];
+	// $: if (priority > applications.length) {
+	// 	priority = applications.length;
+	// }
+	// $: if (priority < 1) {
+	// 	priority = 1;
+	// }
 
 	let completed = 0;
 	async function refreshSample() {
@@ -25,7 +25,7 @@
 		abit = abits[0];
 		applications = abit.applications;
 		completed = 0;
-		priority = 1;
+		priority = [1, 2, 3, 4, 5];
 		return true;
 	}
 
@@ -33,7 +33,7 @@
 		abit = await db.updateAbitPriorities(abit);
 		completed += 1;
 		total += 1;
-		priority = 1;
+		priority = [1, 2, 3, 4, 5];
 		abit = abits[completed];
 		applications = abit.applications;
 		if (completed == 9) await refreshSample();
@@ -86,7 +86,7 @@
 		{#await pending}
 			<div class="button inactive">Загрузка...</div>
 		{:then status}
-			<div class:inactive={priority !== applications.length} class="button" on:click={handleNext}>
+			<div class:inactive={applications.length != 5 - priority.length} class="button" on:click={handleNext}>
 				Сохранить и продолжить &#8594;
 			</div>
 		{:catch}
@@ -151,7 +151,7 @@
 
 	.button:hover {
 		padding: 2rem;
-		margin: 3rem 0 0 -2rem;
+		margin: 3rem 0 0 -rem;
 		background: var(--color-green);
 	}
 

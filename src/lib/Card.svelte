@@ -7,18 +7,21 @@
 	let current;
 	let selected = false;
 
+	console.log('CUM', priority);
+
 	function select() {
 		if (selected) {
 			selected = false;
 			app.priority = null;
-			priority -= 1;
-			current = priority;
+			priority = [...priority, current];
+			priority.sort();
 			return;
 		}
 		selected = true;
-		app.priority = priority;
-		current = priority;
-		priority += 1;
+		current = priority[0];
+		app.priority = current;
+		priority = priority.slice(1);
+		console.log(priority, current);
 	}
 </script>
 
@@ -30,7 +33,7 @@
 		{#if selected}
 			<h4 class="priority">{current} &#9989;</h4>
 		{:else}
-			<h4 class="priority">{priority}</h4>
+			<h4 class="priority">{priority[0]}</h4>
 		{/if}
 	</div>
 	<div class="half">
