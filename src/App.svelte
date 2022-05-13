@@ -11,16 +11,23 @@
 	let abit;
 	let applications = [];
 
+	let priority;
+	$: if (priority > applications.length) {
+		priority = applications.length;
+	}
+	$: if (priority < 1) {
+		priority = 1;
+	}
+
 	let completed = 0;
 	async function refreshSample() {
 		abits = await db.getAbitSample();
 		abit = abits[0];
 		applications = abit.applications;
 		completed = 0;
+		priority = 1;
 		return true;
 	}
-
-	let priority = 1;
 
 	async function updateAbit() {
 		abit = await db.updateAbitPriorities(abit);
@@ -79,7 +86,7 @@
 		{#await pending}
 			<div class="button inactive">Загрузка...</div>
 		{:then status}
-			<div class:inactive={priority !== applications.length + 1} class="button" on:click={handleNext}>
+			<div class:inactive={priority !== applications.length} class="button" on:click={handleNext}>
 				Сохранить и продолжить &#8594;
 			</div>
 		{:catch}

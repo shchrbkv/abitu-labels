@@ -12,6 +12,7 @@
 			selected = false;
 			app.priority = null;
 			priority -= 1;
+			current = priority;
 			return;
 		}
 		selected = true;
