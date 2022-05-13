@@ -12,12 +12,6 @@
 	let applications = [];
 
 	let priority = [1, 2, 3, 4, 5];
-	// $: if (priority > applications.length) {
-	// 	priority = applications.length;
-	// }
-	// $: if (priority < 1) {
-	// 	priority = 1;
-	// }
 
 	let completed = 0;
 	async function refreshSample() {
@@ -151,7 +145,7 @@
 
 	.button:hover {
 		padding: 2rem;
-		margin: 3rem 0 0 -rem;
+		margin: 3rem 0 0 -1rem;
 		background: var(--color-green);
 	}
 

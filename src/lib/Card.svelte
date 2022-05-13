@@ -21,7 +21,6 @@
 		current = priority[0];
 		app.priority = current;
 		priority = priority.slice(1);
-		console.log(priority, current);
 	}
 </script>
 
